@@ -16,7 +16,6 @@ function ProductForm() {
   const navigate = useNavigate();
   const { id } = useParams();
 
-  // Manejar cambios
   const handleChange = (e) => {
     setForm({
       ...form,
@@ -24,7 +23,6 @@ function ProductForm() {
     });
   };
 
-  // Obtener proveedores
   const getProviders = async () => {
     try {
       const res = await API.get('/providers');
@@ -34,7 +32,6 @@ function ProductForm() {
     }
   };
 
-  // Obtener producto si es edición
   const getProduct = async () => {
     try {
       if (id) {
@@ -50,7 +47,6 @@ function ProductForm() {
     }
   };
 
-  // Guardar (crear o editar)
   const saveProduct = async (e) => {
     e.preventDefault();
 
@@ -112,7 +108,6 @@ function ProductForm() {
           onChange={handleChange}
         />
 
-        {/* 🔥 SELECT DE PROVEEDORES */}
         <select
           name="providerId"
           className="form-control mb-2"
