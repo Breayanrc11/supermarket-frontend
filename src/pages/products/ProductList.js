@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 function ProductList() {
   const [products, setProducts] = useState([]);
 
-  // Obtener productos
   const getProducts = async () => {
     try {
       const res = await API.get('/products');
@@ -15,7 +14,6 @@ function ProductList() {
     }
   };
 
-  // Eliminar producto
   const deleteProduct = async (id) => {
     if (window.confirm('¿Seguro que deseas eliminar este producto?')) {
       try {
